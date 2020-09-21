@@ -2,6 +2,6 @@
 # Grupo 3
 
 ## Integrantes
-- Alabi, Gabriel
+- Alabi, Iván Gabriel
 - Caro, Ignacio Rolando
 - Quevedo, Franco
