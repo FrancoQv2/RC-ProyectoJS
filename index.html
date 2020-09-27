@@ -31,7 +31,8 @@
                         <a class="nav-link" href="about-us.html">About us</a>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#login-modal">Admin</button>
+                <button type="button" class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal"
+                    data-target="#login-modal">Admin</button>
             </div>
         </nav>
     </header>
@@ -39,7 +40,57 @@
         <div class="container-fluid p-3">
             <h1 class="text-center display-4">Look up for your favorite!</h1>
             <hr>
-
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="img/RyuSF1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="img/RyuSF1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a short card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="img/RyuSF1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="img/RyuSF1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="img/RyuSF1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -47,17 +98,34 @@
 
         <!-- Modal Login Admin-->
         <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content bg-dark">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-light text-dark">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="login-modal">Administrator's only</h4>
+                        <h3 class="modal-title text-center display-4" id="login-modal">Iniciar Sesión</h3>
                     </div>
                     <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-info">Sign in</button>
+                        <form class="shadow p-4 rounded" id="formLogin" onsubmit="admin(event)">
+                            <div class="form-group">
+                                <label>Nombre de usuario</label>
+                                <input class="form-control" type="text" id="login-username" placeholder="comandantefort"
+                                    required>
+                                <div class="valid-feedback">Perfecto!</div>
+                                <div class="invalid-feedback">Su usuario debe contener solo letras minúsculas.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input class="form-control" type="password" id="login-password"
+                                    placeholder="Mínimo 8 caracteres" required>
+                                <div class="valid-feedback">Perfecto!</div>
+                                <div class="invalid-feedback">La contraseña debe contener como mínimo 8
+                                    caracteres.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-info">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -82,6 +150,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
