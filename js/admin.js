@@ -1,5 +1,3 @@
-let fighters = JSON.parse(localStorage.getItem('fighters')) || [];
-
 class Fighter {
     constructor(name, origin, power, strenght, image) {
         this.name = name;
@@ -10,12 +8,13 @@ class Fighter {
     }
 }
 
+let _fighters = JSON.parse(localStorage.getItem('fighters')) || [];
+
 let name = document.getElementById('name');
 let origin = document.getElementById('origin');
 let power = document.getElementById('power');
 let strenght = document.getElementById('strenght');
 let image = document.getElementById('image');
-
 
 function cleanForm() {
     name.value = "";
@@ -31,7 +30,6 @@ function cleanForm() {
     image.classList = "form-control";
 }
 
-
 function handleSubmit(event) {
     event.preventDefault();
     controls();
@@ -42,8 +40,8 @@ function handleSubmit(event) {
         });
     } else {
         let fighter = new Fighter(name.value, image.value, power.value, strenght.value, origin.value);
-        fighters.push(fighter);
-        localStorage.setItem('fighters', JSON.stringify(fighters));
+        _fighters.push(fighter);
+        localStorage.setItem('fighters', JSON.stringify(_fighters));
         cleanForm();
         showTable();
     }
@@ -55,10 +53,10 @@ function controls() {
     } else {
         name.classList = "form-control is-valid";
     }
-    if (image.value == "") {
-        image.classList = "form-control is-invalid";
+    if (origin.value == "") {
+        origin.classList = "form-control is-invalid";
     } else {
-        image.classList = "form-control is-valid";
+        origin.classList = "form-control is-valid";
     }
     if (power.value == "" || power.value == "-") {
         power.classList = "form-control is-invalid";
@@ -70,28 +68,26 @@ function controls() {
     } else {
         strenght.classList = "form-control is-valid";
     }
-    if (origin.value == "") {
-        origin.classList = "form-control is-invalid";
+    if (image.value == "") {
+        image.classList = "form-control is-invalid";
     } else {
-        origin.classList = "form-control is-valid";
+        image.classList = "form-control is-valid";
     }
 }
 
 function deleteFighter(i) {
-    let todelete = fighters.filter((item) => {
-        return fighters[i] != item
+    let todelete = _fighters.filter((item) => {
+        return _fighters[i] != item
     })
-    localStorage.setItem('fighters', JSON.stringify(todelete));
+    localStorage.setItem('_fighters', JSON.stringify(todelete));
     showTable();
 }
 
 function showTable() {
-    fighters = JSON.parse(localStorage.getItem('fighters')) || [];
-
     let table = document.getElementById('table-fighters');
     table.innerHTML = "";
 
-    fighters.map((item, i) => {
+    _fighters.map((item, i) => {
         table.innerHTML += `<tr>
     <th scope="row" class="d-flex align-items-center">${i+1}</th>
     <td>${item.name}</td>
@@ -102,4 +98,9 @@ function showTable() {
     <td class="btn btn-outline-danger" title="Borrar" onclick="deleteFighter(${i})"><i class="fas fa-trash-alt"></i></td>
   </tr>`
     })
+}
+
+function signOut(event) {
+    event.preventDefault();
+    window.location.replace("./index.html");
 }

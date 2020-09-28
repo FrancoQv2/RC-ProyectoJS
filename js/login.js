@@ -45,7 +45,6 @@ function validateAdmin(event) {
     let passAdmin = "rolling2020";
 
     if (user.value == userAdmin && password.value == passAdmin) {
-        localStorage.setItem('loged', true)
         window.location.replace("./admin.html");
     } else {
         user.className = "form-control";
