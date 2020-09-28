@@ -1,112 +1,105 @@
-let personajes = JSON.parse(localStorage.getItem('personajes')) || [];
+let fighters = JSON.parse(localStorage.getItem('fighters')) || [];
 
-class Personaje {
-    constructor(nombre, linkImagen,poder, fuerza, origen) {
-        this.nombre = nombre;
-        this.linkImagen = linkImagen;
-        this.poder = poder;
-        this.fuerza = fuerza;
-        this.origen = origen;
+class Fighter {
+    constructor(name, origin, power, strenght, image) {
+        this.name = name;
+        this.origin = origin;
+        this.power = power;
+        this.strenght = strenght;
+        this.image = image;
     }
 }
-let nombre = document.getElementById('nombre');
-let linkImagen = document.getElementById('linkImagen');
-let poder = document.getElementById('poder');
-let fuerza = document.getElementById('fuerza');
-let origen = document.getElementById('origen');
+
+let name = document.getElementById('name');
+let origin = document.getElementById('origin');
+let power = document.getElementById('power');
+let strenght = document.getElementById('strenght');
+let image = document.getElementById('image');
+
+
+function cleanForm() {
+    name.value = "";
+    origin.value = "";
+    power.value = "";
+    strenght.value = "";
+    image.value = "";
+
+    name.classList = "form-control";
+    origin.classList = "form-control";
+    power.classList = "form-control";
+    strenght.classList = "form-control";
+    image.classList = "form-control";
+}
 
 
 function handleSubmit(event) {
-    event.preventDefault()
-    controls()
-    if (nombre.value == "" || linkImagen.value == "" || poder.value == "" || fuerza.value == "" || origen.value == "" ) {
-        alert("complete los campos")
-        return;
+    event.preventDefault();
+    controls();
+    if (name.value == "" || image.value == "" || power.value == "" || strenght.value == "" || origin.value == "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Campos incompletos'
+        });
     } else {
-
-        let personaje = new Personaje(nombre.value, linkImagen.value, poder.value, fuerza.value, origen.value);
-        personajes.push(personaje);
-        document.getElementById('nombre').value = "";
-        document.getElementById('linkImagen').value = "";
-        document.getElementById('poder').value = "";
-        document.getElementById('fuerza').value = "";
-        document.getElementById('origen').value = "";
-        localStorage.setItem('personajes', JSON.stringify(personajes))
-        mostrar()
-        nombre.classList = "form-control";
-        linkImagen.classList = "form-control";
-        poder.classList = "form-control";
-        fuerza.classList = "form-control";
-        origen.classList = "form-control";
+        let fighter = new Fighter(name.value, image.value, power.value, strenght.value, origin.value);
+        fighters.push(fighter);
+        localStorage.setItem('fighters', JSON.stringify(fighters));
+        cleanForm();
+        showTable();
     }
 }
 
 function controls() {
-
-    if (nombre.value == "") {
-        nombre.classList = "form-control is-invalid";
+    if (name.value == "") {
+        name.classList = "form-control is-invalid";
     } else {
-        nombre.classList = "form-control is-valid";
+        name.classList = "form-control is-valid";
     }
-    if (linkImagen.value == "") {
-        linkImagen.classList = "form-control is-invalid";
+    if (image.value == "") {
+        image.classList = "form-control is-invalid";
     } else {
-        linkImagen.classList = "form-control is-valid";
+        image.classList = "form-control is-valid";
     }
-    if (poder.value == "") {
-        poder.classList = "form-control is-invalid";
+    if (power.value == "" || power.value == "-") {
+        power.classList = "form-control is-invalid";
     } else {
-       poder.classList = "form-control is-valid";
+       power.classList = "form-control is-valid";
     }
-    if (fuerza.value == "") {
-        fuerza.classList = "form-control is-invalid";
+    if (strenght.value == "" || strenght.value == "-") {
+        strenght.classList = "form-control is-invalid";
     } else {
-        fuerza.classList = "form-control is-valid";
+        strenght.classList = "form-control is-valid";
     }
-    if (origen.value == "") {
-        origen.classList = "form-control is-invalid";
+    if (origin.value == "") {
+        origin.classList = "form-control is-invalid";
     } else {
-        origen.classList = "form-control is-valid";
+        origin.classList = "form-control is-valid";
     }
 }
 
-function borrar(i) {
-    console.log(i)
-    let borrado = personajes.filter((item) => {
-        return personajes[i] != item
+function deleteFighter(i) {
+    let todelete = fighters.filter((item) => {
+        return fighters[i] != item
     })
-    console.log(borrado);
-    localStorage.setItem('personajes', JSON.stringify(borrado))
-    console.log(personajes)
-    mostrar()
+    localStorage.setItem('fighters', JSON.stringify(todelete));
+    showTable();
 }
 
-function mostrar() {
-    personajes = JSON.parse(localStorage.getItem('personajes')) || [];
-    let tabla = document.getElementById('tabla');
-    tabla.innerHTML = ""
+function showTable() {
+    fighters = JSON.parse(localStorage.getItem('fighters')) || [];
 
-    personajes.map((item, i) => {
-        tabla.innerHTML += `<tr>
-    <th scope="row">1</th>
-    <td>${item.nombre}</td>
-    <td>${item.linkImagen}</td>
-    <td>${item.poder}</td>
-    <td>${item.fuerza}</td>
-    <td>${item.origen}</td>
-    <td class="btn btn-outline-danger" onclick="borrar(${i})">Borrar</td>
+    let table = document.getElementById('table-fighters');
+    table.innerHTML = "";
+
+    fighters.map((item, i) => {
+        table.innerHTML += `<tr>
+    <th scope="row" class="d-flex align-items-center">${i+1}</th>
+    <td>${item.name}</td>
+    <td>${item.image}</td>
+    <td>${item.power}</td>
+    <td>${item.strenght}</td>
+    <td>${item.origin}</td>
+    <td class="btn btn-outline-danger" title="Borrar" onclick="deleteFighter(${i})"><i class="fas fa-trash-alt"></i></td>
   </tr>`
     })
-}
-
-
-
-function signOutAdmin(event) {
-    event.preventDefault();
-    let logedin = sessionStorage.getItem('loged');
-    console.log(logedin);
-    if (logedin == true) {
-        sessionStorage.removeItem(logedin);
-        window.location.replace("./index.html");
-    }
 }

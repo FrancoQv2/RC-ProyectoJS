@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Franco Quevedo, Iván Gabriel Alabi, Ignacio Rolando Caro">
-    <title>Admin | Characters</title>
+    <title>Admin | Rolling Kombat</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/867f1193c1.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="showTable();">
     <header>
         <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,14 +40,71 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid p-3">
-            <h1 class="text-center display-4">Characters administration</h1>
+        <div class="container p-3">
+            <h1 class="text-center title-page">Administración de personajes</h1>
             <hr>
+            <form class="row" onsubmit="handleSubmit(event)">
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="name">Nombre</label>
+                    <input type="text" placeholder="Ej: Luiggi" class="form-control" id="name" onchange="controls()">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="origin">Origen del luchador</label>
+                    <input type="text" placeholder="Ej: Mario Bros." class="form-control" id="origin"
+                        onchange="controls()">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="power">Poderes</label>
+                    <select class="custom-select" id="power" onchange="controls()">
+                        <option selected>-</option>
+                        <option>Pelea</option>
+                        <option>Armas</option>
+                        <option>Fuego</option>
+                        <option>Hielo/Agua</option>
+                        <option>Veneno</option>
+                        <option>Electricidad</option>
+                        <option>Magia</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="strenght">Nivel de rudeza</label>
+                    <select class="custom-select" id="strenght" onchange="controls()">
+                        <option selected>-</option>
+                        <option>Menos fuerte que un hombre adulto</option>
+                        <option>Más fuerte que un hombre adulto</option>
+                        <option>Menos fuerte que un dinosaurio</option>
+                        <option>Más fuerte que un dinosaurio</option>
+                        <option>No puede destruir una montaña</option>
+                        <option>Puede destruir una montaña</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="image">Link Imagen</label>
+                    <input type="text" class="form-control" id="image" onchange="controls()">
+                </div>
+                <button type="submit" class="btn btn-info w-100 mx-3 mt-2">Cargar personaje</button>
+            </form>
+            <br>
+            <hr><br>
+            <div class="table-responsive-xl">
+                <table class="table table-hover">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Origen del personaje</th>
+                            <th scope="col">Poder</th>
+                            <th scope="col">Nivel de rudeza</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-fighters">
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-
-
-
     </main>
 
     <!-- Footer -->
@@ -57,6 +115,8 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="js/admin.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

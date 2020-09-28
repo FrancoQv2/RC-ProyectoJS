@@ -19,3 +19,10 @@ footer {
 .modal-content {
     color: white;
 }
+
+/* Titulo página */
+@media (max-width: 576px) {
+    .title-page {
+      font-size: 2.5rem;
+    }
+}
