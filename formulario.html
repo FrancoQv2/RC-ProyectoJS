@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <link rel="stylesheet" href="Adminpage.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="header d-flex">
+     <a href="prueba.html"> <img class="logo" src="img/logo.png" alt=""></a>
+      <a href="formulario.html" class="admin">Admin</a>
+    </header>
+    <!-- Button trigger modal -->
+<button type="button" class="btn agregar btn-danger" data-toggle="modal" data-target="#exampleModal">
+  Agregar luchador Nuevo
+</button>
+
+
+<table style="table-layout: fixed; width: 100%" class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">URL</th>
+      <th scope="col">Naturaleza</th>
+      <th scope="col">Poder</th>
+      <th scope="col">Fuerza</th>
+      <th scope="col">Origen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="row"><span class="unskew"> Chung-lee</span></th>
+      <td style="word-wrap: break-word;">https://i.pinimg.com/originals/f7/2d/bf/f72dbf12826f93123051e1400d44bfa9.jpg</td>
+      <td>Humano</td>
+      <td>Pelea</td>
+      <td>Mas que un hombre Adulto</td>
+      <td>Street Fighter</td>
+    </tr>
+    <tr>
+      <th scope="row" class="row"><span class="unskew"> Charizard</span></th>
+      <td style="word-wrap: break-word;">https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png</td>
+      <td>Animal</td>
+      <td>Fuego</td>
+      <td>puede destrozar una montaña</td>
+      <td>Pokemon</td>
+    </tr>
+    <tr>
+      <th scope="row" class="row"><span class="unskew"> Iori Orochi</span></th>
+      <td style="word-wrap: break-word;">https://netjoven.pe/_files/12/04/1204rh4X.jpg</td>
+      <td>Humano</td>
+      <td>Veneno</td>
+      <td>Menos fuerte que un dinosaurio</td>
+      <td>King of Fighter</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<!-- <form action="">
+  <tr>
+    <th>Nombre Personaje</th>
+    <th>URL</th>
+    <th>Naturaleza</th>
+    <th>Poder</th>
+    <th>Fuerza</th>
+    <th>Origen</th>
+  </tr>
+</form> -->
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+     <div class="container">
+      <label for="name">Nombre del personaje</label><input class="form-control form-control-lg seleccion" placeholder="Ej. Mario Bross"  type="name">
+      <label for="urlCharacter">Enlace de su imagen</label> <input class="form-control form-control-lg seleccion" placeholder="Ej. https://i.pinimg.com/originals/6c/0c/94/6c0c94fe142b17df032f0ea4be88ef39.jpg "  type="urlCharacter">
+      <label for="typeofCreature">Cual es su naturaleza?</label><select  class="form-control seleccion form-control-lg">
+        <option  selected disabled>Selecciona</option>
+        <option>Humano</option>
+        <option>Animal</option>
+        <option>Objeto</option>
+      </select>
+      <label for="hability">En que se basa su poder?</label><select  class="form-control seleccion form-control-lg">
+        <option  selected disabled>Selecciona</option>
+        <option>Pelea</option>
+        <option>Armas</option>
+        <option>Fuego</option>
+        <option>Hielo/Agua</option>
+        <option>Veneno</option>
+        <option>Electricidad</option>
+        <option>Magía</option>
+        <option>Otro</option>
+      </select>
+      <label for="strength">Que tan rudo es?</label><select  class="form-control browser-default seleccion form-control-lg">
+        <option  selected disabled>Selecciona</option>
+        <option>menos fuerte que un hombre adulto</option>
+        <option>mas fuerte que un hombre adulto</option>
+        <option>menos fuerte que un dinosaurio</option>
+        <option>mas fuerte que un dinosaurio</option>
+        <option>no puede destruir una montaña</option>
+        <option>puede destruir una montaña</option>
+      </select>
+      <label for="origin">Origen del luchador</label> <input placeholder="Ej. Mario Bross" class="form-control form-control-lg seleccion"  type="origin">
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })</script>
+  </body>
+</html>
