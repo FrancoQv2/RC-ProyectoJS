@@ -54,6 +54,15 @@
                         onchange="controls()">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
+                    <label for="nature">Naturaleza</label>
+                    <select class="custom-select" id="nature" onchange="controls()">
+                        <option selected>-</option>
+                        <option>Humano</option>
+                        <option>Animal</option>
+                        <option>Objeto</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
                     <label for="power">Poderes</label>
                     <select class="custom-select" id="power" onchange="controls()">
                         <option selected>-</option>
@@ -94,6 +103,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Origen del personaje</th>
+                            <th scope="col">Naturaleza</th>
                             <th scope="col">Poder</th>
                             <th scope="col">Nivel de rudeza</th>
                             <th scope="col">Imagen</th>

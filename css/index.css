@@ -22,7 +22,18 @@ header{
     
 }
 body{
-    background-image: url(img/red_orange_black_179383834\ \(1\).jpg);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-image: url(img/red_orange_black_179383834\ \(1\).jpg); */
+  background: rgb(241, 180, 3);
+  background: linear-gradient(
+    161deg,
+    rgba(241, 180, 3, 1) 0%,
+    rgba(173, 4, 1, 1) 20%,
+    rgba(24, 3, 2, 1) 100%
+  );
+  margin: 0px !important;
+    margin: 0px !important;
 }
 .admin{
     padding: 20px;
@@ -33,11 +44,10 @@ body{
     color: #1f271b;
     font-weight: bolder;
 }
-.d-flex{
-    min-height: 100%;
-    align-items: stretch !important;
-    flex: 1 1 1 auto;
+.contenedor{
+    display: flex;
     flex-wrap: wrap;
+    flex-shrink: none;
 }
 .card{
     border: 5px solid black !important;
@@ -51,6 +61,7 @@ body{
    flex-direction: column;
    justify-content: space-between;
     /* opacity: 0; */
+    width: 33%;
 }
 
 .personaje{
@@ -80,7 +91,7 @@ body{
 .donde{
 position: relative;
 bottom: 0;
-width: 100%;
+width: 112%;
 background-color: brown;
 padding: 20px 0;
 color: white;
