@@ -9,7 +9,7 @@ class Fighter {
     }
 }
 
-let _fighters = JSON.parse(localStorage.getItem('fighters')) || [];
+let fighters = JSON.parse(localStorage.getItem('fighters')) || [];
 
 let name = document.getElementById('name');
 let origin = document.getElementById('origin');
@@ -44,8 +44,8 @@ function handleSubmit(event) {
         });
     } else {
         let fighter = new Fighter(name.value, image.value, nature.value, power.value, strenght.value, origin.value);
-        _fighters.push(fighter);
-        localStorage.setItem('fighters', JSON.stringify(_fighters));
+        fighters.push(fighter);
+        localStorage.setItem('fighters', JSON.stringify(fighters));
         cleanForm();
         showTable();
     }
@@ -85,10 +85,10 @@ function controls() {
 }
 
 function deleteFighter(i) {
-    let todelete = _fighters.filter((item) => {
-        return _fighters[i] != item
+    let todelete = fighters.filter((item) => {
+        return fighters[i] != item
     })
-    localStorage.setItem('_fighters', JSON.stringify(todelete));
+    localStorage.setItem('fighters', JSON.stringify(todelete));
     showTable();
 }
 
@@ -96,7 +96,7 @@ function showTable() {
     let table = document.getElementById('table-fighters');
     table.innerHTML = "";
 
-    _fighters.map((item, i) => {
+    fighters.map((item, i) => {
         table.innerHTML += `<tr>
     <th scope="row" class="d-flex align-items-center">${i+1}</th>
     <td>${item.name}</td>
