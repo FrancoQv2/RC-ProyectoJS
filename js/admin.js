@@ -70,8 +70,6 @@ function handleSubmit(event) {
             for (i in _fighters)
                 if (_fighters[i].id == id2.value) {
 
-
-
                     let fighter = new Fighter(id2.value, name2.value, origin2.value, power2.value, strenght2.value, image2.value);
                     _fighters[i] = fighter;
                     localStorage.setItem('_fighters', JSON.stringify(_fighters));
@@ -87,8 +85,6 @@ function handleSubmit(event) {
         showTable();
     }
 }
-
-
 
 function controls1() {
     if (id1.value == "") {
@@ -123,7 +119,6 @@ function controls1() {
     }
 }
 
-
 function controls2() {
     if (id2.value == "") {
         id2.classList = "form-control is-invalid";
@@ -157,7 +152,6 @@ function controls2() {
     }
 }
 
-
 function deleteFighter(i) {
     console.log(i);
     let todelete = _fighters.filter((item) => {
@@ -173,11 +167,8 @@ function updateFighter(i) {
     if (i != null) {
 
         _fighters = JSON.parse(localStorage.getItem("_fighters"))
-        console.log(_fighters)
 
         var peleadores = _fighters[i];
-
-
 
         let form = document.getElementById('formFighter');
         form.innerHTML = "";
@@ -209,7 +200,7 @@ function updateFighter(i) {
                             <option selected>${peleadores.power}</option>
                             <option>Pelea</option>
                             <option>Armas</option>
-                            <option>Fuego</option>
+                            <option>Fuego</option>dir
                             <option>Hielo/Agua</option>
                             <option>Veneno</option>
                             <option>Electricidad</option>
@@ -240,13 +231,8 @@ function updateFighter(i) {
     </div>
 </div>`
 
-
-
     }
 }
-
-
-
 
 function showTable() {
     _fighters = JSON.parse(localStorage.getItem('_fighters')) || [];
@@ -266,13 +252,8 @@ function showTable() {
     <td class="btn btn-outline-danger" title="Modificar" data-toggle="modal"
     data-target="#login-modal" onclick="updateFighter(${i})"><i class="fa fa-pencil-alt"></i></td>
   </tr>`
-
-
     })
 }
-
-
-
 
 function signOut(event) {
     event.preventDefault();
