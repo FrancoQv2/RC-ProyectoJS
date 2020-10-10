@@ -90,22 +90,21 @@ function strengthFighter(strength) {
 function loadCards() {
     fighters.map((item, i) => {
         cardsContainer.innerHTML += `
-         <div class="card col-sm-6 col-md-4 col-lg-3">
+        <div class="col my-4 d-flex justify-content-center">
+          <div class="card">
             <img src="${item.origin}" alt="" class="fighter-img">
             <p class="fighter-name">${item.name}</p>
             <div class="lineadecod">
-               <img src="${natureFighter(item.nature)}" alt="" 
-               class="icons" data-toggle="tooltip" data-placement="top"
-               title="${natureDescription(item.nature)}">
-               <img src="${powerFighter(item.power)}" alt="" 
-               class="icons" data-toggle="tooltip" data-placement="top"
-               title="${powerDescription(item.power)}">
-               <img src="${strengthFighter(item.strenght)}" alt="" 
-               data-toggle="tooltip" data-placement="top"
-               title="${item.strenght}" class="icons">
+              <img src="${natureFighter(item.nature)}" alt="" class="icons" data-toggle="tooltip"
+                data-placement="top" title="${natureDescription(item.nature)}">
+              <img src="${powerFighter(item.power)}" alt="" class="icons" data-toggle="tooltip"
+                data-placement="top" title="${powerDescription(item.power)}">
+              <img src="${strengthFighter(item.strenght)}" class="icons" data-toggle="tooltip"
+                data-placement="top" title="${item.strenght}">
             </div>
             <div class="fighter-info">${item.image}</div>
-         </div>
+          </div>
+        </div>
          `;
     });
 }

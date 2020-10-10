@@ -5,15 +5,48 @@
     font-family: "Open Sans", sans-serif;
     text-decoration: none;
 }
-
 *:active {
     text-decoration: none;
 }
-
 html {
     scroll-behavior: smooth;
 }
 
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.navbar-nav a {
+    font-family: "Press Start 2P";
+    font-size: 14px;
+    color: rgb(241, 180, 3) !important;
+}
+.navbar-light .navbar-brand {
+    font-family: "Press Start 2P";
+    color: rgb(241, 180, 3) !important;
+    font-size: 20px;
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show > .nav-link {
+    color: rgb(241, 180, 3);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(241, 180, 3);
+}
+.navbar-nav {
+    text-align: center;
+}
+.nav-link.active, .nav.link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(241, 120, 3) !important;
+}
+.navbar-toggler {
+    font-size: 1rem;
+    background-color: #f1b503 !important;
+}
+
+/* Main body para las cards */
 main {
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -27,20 +60,37 @@ main {
     margin: 0px !important;
 }
 
+/* Banner */
+@media (max-width: 560px) {
+    #banner {
+        visibility: hidden;
+    }
+}
+@media (max-width: 1024px) {
+    #banner {
+        margin-top: 2rem;
+    }
+}
+
 /* Footer */
 footer {
     color: white;
     font-size: small;
 }
 
+/* Titulo página */
+.title-page {
+    font-family: "Press Start 2P";
+    color: #f1b503;
+    margin-top: 5rem;
+}
+@media (max-width: 560px) {
+    .title-page {
+        font-size: 24px;
+    }
+}
+
 /* Modal login */
 .modal-content {
     color: white;
-}
-
-/* Titulo página */
-@media (max-width: 576px) {
-    .title-page {
-        font-size: 2.5rem;
-    }
 }
