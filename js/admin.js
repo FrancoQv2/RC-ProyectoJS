@@ -225,7 +225,7 @@ function showTable() {
     _fighters = JSON.parse(localStorage.getItem('_fighters')) || [];
     let table = document.getElementById('table-fighters');
     table.innerHTML = "";
-    fighters.map((item, i) => {
+    _fighters.map((item, i) => {
         table.innerHTML += 
         `<tr>
             <td>${item.id}</td>

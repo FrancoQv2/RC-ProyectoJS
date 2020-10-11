@@ -1,4 +1,4 @@
-let fighters = JSON.parse(localStorage.getItem("fighters"));
+let fighters = JSON.parse(localStorage.getItem("_fighters"));
 const cardsContainer = document.getElementById("cards-container");
 
 function natureFighter(nature) {
@@ -11,7 +11,7 @@ function natureFighter(nature) {
         case "Objeto":
             return "img/ico-type/naturaleza_objeto.svg";
         default:
-            return "no hay nada aquí";
+            return "-";
     }
 }
 function natureDescription(nature) {
@@ -43,7 +43,7 @@ function powerFighter(power) {
         case "Otro":
             return "img/ico-proficiency/poder_otro.svg";
         default:
-            return "no hay nada aquí";
+            return "-";
     }
 }
 function powerDescription(power) {
@@ -65,7 +65,7 @@ function powerDescription(power) {
         case "Otro":
             return "Su poder se basa en fuerzas no convencionales";
         default:
-            return "no hay nada aquí";
+            return "-";
     }
 }
 function strengthFighter(strength) {
@@ -83,16 +83,18 @@ function strengthFighter(strength) {
         case "Puede destruir una montaña":
             return "img/ico-strenght/mas_fuerte_montaña.svg";
         default:
-            return "aquí no hay nada";
+            return "-";
     }
 }
 
 function loadCards() {
     fighters.map((item, i) => {
+        console.log(`Fighter ${i}`);
+        console.log(item);
         cardsContainer.innerHTML += `
         <div class="col my-4 d-flex justify-content-center">
           <div class="card">
-            <img src="${item.origin}" alt="" class="fighter-img">
+            <img src="${item.image}" alt="" class="fighter-img">
             <p class="fighter-name">${item.name}</p>
             <div class="lineadecod">
               <img src="${natureFighter(item.nature)}" alt="" class="icons" data-toggle="tooltip"
@@ -102,7 +104,7 @@ function loadCards() {
               <img src="${strengthFighter(item.strenght)}" class="icons" data-toggle="tooltip"
                 data-placement="top" title="${item.strenght}">
             </div>
-            <div class="fighter-info">${item.image}</div>
+            <div class="fighter-info">${item.origin}</div>
           </div>
         </div>
          `;
@@ -120,7 +122,7 @@ let cardsCollection = document.querySelectorAll ('.card');
 function loadCardsAnimation() {
     cardsCollection.forEach((link, index) => {
       link.style.animation = `intro 0.5s ease ${index / 7 + 0.5}s`;
-      console.log(link, index);
+    //   console.log(link, index);
     });
 }
 
