@@ -1,0 +1,60 @@
+.admin {
+    padding: 20px;
+    padding-top: 35px; 
+    /* background-color: #fde74c; */
+    border-top-left-radius: 20%;
+    border-bottom-left-radius: 20%;
+    color: white;
+    font-weight: bolder;
+  }
+/* label stilying */
+#formFighter label{
+  color: white ;
+  font-family: "Press Start 2P";
+}
+/* submit button */
+.submit-button{
+    padding: 30px !important;
+    box-shadow: -5px 29px 62px 34px rgba(0,0,0,0.75);
+    font-weight: bolder !important;
+    font-size: larger !important;
+    display: inline;
+}
+/* table stilyng */
+table{
+  width: 100%;
+  display: block;
+}
+.shortened{
+  display: block ;
+  white-space: nowrap; 
+  width: 50px; 
+  height: 200px ; 
+  overflow: "hidden" ;
+}
+.table td{
+  color: white !important;  
+width: 150px !important;
+word-break:break-all;
+overflow:hidden !important;
+padding: 100px 0;
+}
+#table-fighters {
+  word-wrap: break-word;
+}
+#table-fighters tr td{
+  white-space: nowrap ;
+overflow: hidden !important;
+width: 180px;
+height: 30px !important;
+text-overflow: ellipsis !important; 
+word-break: break-word !important;
+}
+/* styling character name */
+.skew-font{
+  background-color: #220202;
+  width: 10% !important;
+  padding-left: 4% !important;
+ margin-top: 5%;
+font-weight: bolder;
+}

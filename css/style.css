@@ -2,11 +2,74 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
 }
-
+*:active {
+    text-decoration: none;
+}
 html {
     scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.navbar-nav a {
+    font-family: "Press Start 2P";
+    font-size: 14px;
+    color: rgb(241, 180, 3) !important;
+}
+.navbar-light .navbar-brand {
+    font-family: "Press Start 2P";
+    color: rgb(241, 180, 3) !important;
+    font-size: 20px;
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show > .nav-link {
+    color: rgb(241, 180, 3);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(241, 180, 3);
+}
+.navbar-nav {
+    text-align: center;
+}
+.nav-link.active, .nav.link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(241, 120, 3) !important;
+}
+.navbar-toggler {
+    font-size: 1rem;
+    background-color: #f1b503 !important;
+}
+
+/* Main body para las cards */
+main {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: rgb(241, 180, 3);
+    background: linear-gradient(
+        161deg,
+        rgba(241, 180, 3, 1) 0%,
+        rgba(173, 4, 1, 1) 20%,
+        rgba(24, 3, 2, 1) 100%
+    );
+    margin: 0px !important;
+}
+
+/* Banner */
+@media (max-width: 560px) {
+    #banner {
+        visibility: hidden;
+    }
+}
+@media (max-width: 1024px) {
+    #banner {
+        margin-top: 2rem;
+    }
 }
 
 /* Footer */
@@ -15,14 +78,38 @@ footer {
     font-size: small;
 }
 
-/* Modal login */
+/* Titulo página */
+.title-page {
+    font-family: "Press Start 2P";
+    color: #f1b503;
+    margin-top: 5rem;
+}
+@media (max-width: 560px) {
+    .title-page {
+        font-size: 24px;
+    }
+}
+
+/* Modals */
 .modal-content {
     color: white;
 }
-
-/* Titulo página */
-@media (max-width: 576px) {
-    .title-page {
-      font-size: 2.5rem;
-    }
-}
+#login-modal{
+    color: #1f271b;
+    font-family: "Press Start 2P" ;
+    font-size: 22px;
+  }
+  .labels-modal{
+    color: #1f271b !important; 
+    font-size: 15px;
+  }
+  #login-modal input{
+    width: 420px !important;
+  }
+  #login-modal select{
+    width: 420px !important;
+  }
+  .login-title{
+      font-family: "Press Start 2P" ;
+      font-size: 15px;
+  }
