@@ -6,13 +6,10 @@
     border-bottom-left-radius: 20%;
     color: #1f271b;
     font-weight: bolder;
-  }
-
-  #table-fighters{
+}
+#table-fighters {
     color: white;
-  
-  }
-  
- #table-fighters tr:hover {
-    background-color:rgb(241, 120, 3)
-  }
+}
+#table-fighters tr:hover {
+    background-color: rgb(241, 120, 3);
+}

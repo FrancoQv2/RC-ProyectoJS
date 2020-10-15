@@ -180,26 +180,26 @@ function updateFighter(i) {
                     </div>
                     <div class="modal-body">
                         <form name="formFighter2" id="formFighter2" class="row" onsubmit="handleSubmit(event)">
-                        <div class="form-group col-sm-12 col-md-6">
-                            <label for="name">Nombre</label>
-                                <input type="number" value="${peleadores.id}" placeholder="Ej: Luiggi" class="form-control" id="id2" onchange="controls2()" readonly>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="name">Nombre</label>
+                                <input type="number" value="${peleadores.id}" class="form-control" id="id2" onchange="controls2()" readonly>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="name">Nombre</label>
                                 <input type="text" value="${peleadores.name}" class="form-control" id="name2" onchange="controls2()">
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                            <label for="nature">Naturaleza</label>
-                            <select class="custom-select"  id="nature2" onchange="controls()">
-                                <option selected>${peleadores.nature}</option>
-                                <option>Humano</option>
-                                <option>Animal</option>
-                                <option>Objeto</option>
-                            </select>
-                        </div>
-                            <div class="form-group col-sm-12 col-md-6">
                                 <label for="origin">Origen del luchador</label>
-                                <input type="text" value="${peleadores.origin}"  class="form-control" id="origin2" onchange="controls2()">
+                                <input type="text" value="${peleadores.origin}" class="form-control" id="origin2" onchange="controls2()">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="nature">Naturaleza</label>
+                                <select class="custom-select" id="nature2" onchange="controls2()">
+                                    <option selected>${peleadores.nature}</option>
+                                    <option>Humano</option>
+                                    <option>Animal</option>
+                                    <option>Objeto</option>
+                                </select>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="power">Poderes</label>
