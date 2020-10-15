@@ -64,7 +64,7 @@ function handleSubmit(event) {
 
             for (i in _fighters) {
                 if (_fighters[i].id == id2.value) {
-                    let fighter = new Fighter(id2.value, name2.value, nature2.value, origin2.value, power2.value, strenght2.value, image2.value);
+                    let fighter = new Fighter(id2.value, name2.value, origin2.value, nature2.value, power2.value, strenght2.value, image2.value);
                     _fighters[i] = fighter;
                     localStorage.setItem('_fighters', JSON.stringify(_fighters));
                     setTimeout(Redirect(), 0);
@@ -181,19 +181,19 @@ function updateFighter(i) {
                     <div class="modal-body">
                         <form name="formFighter2" id="formFighter2" class="row" onsubmit="handleSubmit(event)">
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="name">Nombre</label>
+                                <label class="labels-modal" for="id2">ID</label>
                                 <input type="number" value="${peleadores.id}" class="form-control" id="id2" onchange="controls2()" readonly>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="name">Nombre</label>
+                                <label class="labels-modal" for="name2">Nombre</label>
                                 <input type="text" value="${peleadores.name}" class="form-control" id="name2" onchange="controls2()">
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="origin">Origen del luchador</label>
+                                <label class="labels-modal text-nowrap" for="origin2">Origen del luchador</label>
                                 <input type="text" value="${peleadores.origin}" class="form-control" id="origin2" onchange="controls2()">
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="nature">Naturaleza</label>
+                                <label class="labels-modal" for="nature2">Naturaleza</label>
                                 <select class="custom-select" id="nature2" onchange="controls2()">
                                     <option selected>${peleadores.nature}</option>
                                     <option>Humano</option>
@@ -202,7 +202,7 @@ function updateFighter(i) {
                                 </select>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="power">Poderes</label>
+                                <label class="labels-modal" for="power2">Poderes</label>
                                 <select class="custom-select" id="power2" onchange="controls2()">
                                     <option selected>${peleadores.power}</option>
                                     <option>Pelea</option>
@@ -216,7 +216,7 @@ function updateFighter(i) {
                                 </select>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="strenght">Nivel de rudeza</label>
+                                <label class="labels-modal text-nowrap" for="strenght2">Nivel de rudeza</label>
                                 <select class="custom-select" id="strenght2" onchange="controls2()">
                                     <option selected>${peleadores.strenght}</option>
                                     <option>Menos fuerte que un hombre adulto</option>
@@ -228,10 +228,10 @@ function updateFighter(i) {
                                 </select>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label for="image">Link Imagen</label>
+                                <label class="labels-modal" for="image2">Link Imagen</label>
                                 <input value="${peleadores.image}" type="text" class="form-control" id="image2" onchange="controls2()">
                             </div>
-                            <button type="submit" class="btn btn-danger w-100 mx-3 mt-2">Modificar personaje</button>
+                            <button type="submit" class="btn btn-danger w-100 mt-3 update-button">Modificar personaje</button>
                         </form>
                     </div>
                 </div>
@@ -245,8 +245,8 @@ function showTable() {
     let table = document.getElementById('table-fighters');
     table.innerHTML = "";
     _fighters.map((item, i) => {
-        table.innerHTML +=
-            `<tr>
+        table.innerHTML += `
+        <tr>
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.origin}</td>

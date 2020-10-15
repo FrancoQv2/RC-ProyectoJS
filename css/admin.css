@@ -7,6 +7,18 @@
     color: #1f271b;
     font-weight: bolder;
 }
+/* label stilying */
+#formFighter label {
+    color: white;
+    font-family: "Press Start 2P";
+}
+/* submit button */
+.submit-button{
+    padding: 20px !important;
+    font-family: "Press Start 2P";
+    box-shadow: -5px 29px 62px 34px rgba(0,0,0,0.75);
+    display: inline;
+}
 #table-fighters {
     color: white;
 }

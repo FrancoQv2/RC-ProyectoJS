@@ -28,7 +28,7 @@ html {
 }
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
     color: rgb(241, 180, 3);
 }
@@ -38,7 +38,9 @@ html {
 .navbar-nav {
     text-align: center;
 }
-.nav-link.active, .nav.link:focus, .navbar-light .navbar-nav .nav-link:hover {
+.nav-link.active,
+.nav.link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
     color: rgb(241, 120, 3) !important;
 }
 .navbar-toggler {
@@ -93,4 +95,29 @@ footer {
 /* Modal login */
 .modal-content {
     color: white;
+}
+#login-modal {
+    color: #1f271b;
+    font-family: "Press Start 2P";
+    font-size: 22px;
+}
+.labels-modal {
+    font-family: "Press Start 2P";
+    color: #1f271b !important;
+    font-size: 15px;
+}
+#login-modal input {
+    width: 420px !important;
+}
+#login-modal select {
+    width: 420px !important;
+}
+.login-title {
+    font-family: "Press Start 2P";
+    font-size: 15px;
+}
+.update-button{
+    padding: 10px !important;
+    font-family: "Press Start 2P";
+    font-size: 10px !important;
 }

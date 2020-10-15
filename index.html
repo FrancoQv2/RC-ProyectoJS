@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Franco Quevedo, Iván Gabriel Alabi, Ignacio Rolando Caro">
+  <link rel="icon" href="img/logo-ico.png">
   <title>Inicio | Rolling Kombat</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -106,14 +107,14 @@
           <div class="modal-body">
             <form class="shadow p-4 rounded" id="formLogin" onsubmit="admin(event)">
               <div class="form-group">
-                <label>Nombre de usuario</label>
+                <label class="labels-modal">Nombre de usuario</label>
                 <input class="form-control" type="text" id="login-username" placeholder="comandantefort" required>
                 <div class="valid-feedback">Perfecto!</div>
                 <div class="invalid-feedback">Su usuario debe contener solo letras minúsculas.
                 </div>
               </div>
               <div class="form-group">
-                <label>Contraseña</label>
+                <label class="labels-modal">Contraseña</label>
                 <input class="form-control" type="password" id="login-password" placeholder="Mínimo 8 caracteres"
                   required>
                 <div class="valid-feedback">Perfecto!</div>
@@ -121,8 +122,8 @@
                   caracteres.</div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-info">Ingresar</button>
+                <button type="button" class="btn btn-secondary update-button" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger update-button">Ingresar</button>
               </div>
             </form>
           </div>
