@@ -1,5 +1,5 @@
 class Fighter {
-    constructor(id, name, origin, power, strenght, image) {
+    constructor(id, name, origin, nature, power, strenght, image) {
         this.id = id;
         this.name = name;
         this.origin = origin;
@@ -39,13 +39,13 @@ function handleSubmit(event) {
     event.preventDefault();
     if (typeof (name1) != "undefined" && name1 !== null) {
         controls1();
-        if (name1.value == "" || origin1.value == "" || power1.value == "" || strenght1.value == "" || image1.value == "") {
+        if (name1.value == "" || origin1.value == "" || nature1.value == "" || power1.value == "" || strenght1.value == "" || image1.value == "") {
             Swal.fire({
                 icon: 'error',
                 title: 'Campos incompletos'
             });
         } else {
-            let fighter = new Fighter(id1.value, name1.value, origin1.value, power1.value, strenght1.value, image1.value);
+            let fighter = new Fighter(id1.value, name1.value, origin1.value, nature1.value, power1.value, strenght1.value, image1.value);
             _fighters.push(fighter);
             localStorage.setItem('_fighters', JSON.stringify(_fighters));
             cleanForm();
@@ -53,7 +53,7 @@ function handleSubmit(event) {
         }
     } else if (typeof (name2) != "undefined" && name2 !== null) {
         controls2();
-        if (name2.value == "" || origin2.value == "" || power2.value == "" || strenght2.value == "" || image2.value == "") {
+        if (name2.value == "" || origin2.value == "" || nature2.value == "" || power2.value == "" || strenght2.value == "" || image2.value == "") {
             Swal.fire({
                 icon: 'error',
                 title: 'Campos incompletos2'
@@ -64,7 +64,7 @@ function handleSubmit(event) {
 
             for (i in _fighters) {
                 if (_fighters[i].id == id2.value) {
-                    let fighter = new Fighter(id2.value, name2.value, origin2.value, power2.value, strenght2.value, image2.value);
+                    let fighter = new Fighter(id2.value, name2.value, nature2.value, origin2.value, power2.value, strenght2.value, image2.value);
                     _fighters[i] = fighter;
                     localStorage.setItem('_fighters', JSON.stringify(_fighters));
                     setTimeout(Redirect(), 0);
@@ -72,7 +72,7 @@ function handleSubmit(event) {
                         window.location = "./admin.html";
                     }
                 }
-            } 
+            }
         }
         showTable();
     }
@@ -93,6 +93,11 @@ function controls1() {
         origin1.classList = "form-control is-invalid";
     } else {
         origin1.classList = "form-control is-valid";
+    }
+    if (nature1.value == "") {
+        nature1.classList = "form-control is-invalid";
+    } else {
+        nature1.classList = "form-control is-valid";
     }
     if (power1.value == "" || power1.value == "-") {
         power1.classList = "form-control is-invalid";
@@ -126,6 +131,11 @@ function controls2() {
         origin2.classList = "form-control is-invalid";
     } else {
         origin2.classList = "form-control is-valid";
+    }
+    if (nature2.value == "") {
+        nature2.classList = "form-control is-invalid";
+    } else {
+        nature2.classList = "form-control is-valid";
     }
     if (power2.value == "" || power2.value == "-") {
         power2.classList = "form-control is-invalid";
@@ -176,11 +186,20 @@ function updateFighter(i) {
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="name">Nombre</label>
-                                <input type="text" placeholder="${peleadores.name}" placeholder="Ej: Luiggi" class="form-control" id="name2" onchange="controls2()">
+                                <input type="text" value="${peleadores.name}" class="form-control" id="name2" onchange="controls2()">
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
+                            <label for="nature">Naturaleza</label>
+                            <select class="custom-select"  id="nature2" onchange="controls()">
+                                <option selected>${peleadores.nature}</option>
+                                <option>Humano</option>
+                                <option>Animal</option>
+                                <option>Objeto</option>
+                            </select>
+                        </div>
+                            <div class="form-group col-sm-12 col-md-6">
                                 <label for="origin">Origen del luchador</label>
-                                <input type="text" placeholder="${peleadores.origin}"  class="form-control" id="origin2" onchange="controls2()">
+                                <input type="text" value="${peleadores.origin}"  class="form-control" id="origin2" onchange="controls2()">
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="power">Poderes</label>
@@ -210,7 +229,7 @@ function updateFighter(i) {
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="image">Link Imagen</label>
-                                <input placeholder="${peleadores.image}" type="text" class="form-control" id="image2" onchange="controls2()">
+                                <input value="${peleadores.image}" type="text" class="form-control" id="image2" onchange="controls2()">
                             </div>
                             <button type="submit" class="btn btn-danger w-100 mx-3 mt-2">Modificar personaje</button>
                         </form>
@@ -226,11 +245,12 @@ function showTable() {
     let table = document.getElementById('table-fighters');
     table.innerHTML = "";
     _fighters.map((item, i) => {
-        table.innerHTML += 
-        `<tr>
+        table.innerHTML +=
+            `<tr>
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.origin}</td>
+            <td>${item.nature}</td>
             <td>${item.power}</td>
             <td>${item.strenght}</td>
             <td>${item.image}</td>
